@@ -32,7 +32,7 @@ body {
   font-size: 1.5rem;
   letter-spacing: 10px;
   overflow-wrap: break-word;
-  inline-size: 30%;
+  inline-size: 100px;
   margin: 2rem 0;
 }
 
@@ -43,6 +43,7 @@ main {
 }
 
 .input-group {
+  position: relative;
   margin-bottom: 2rem;
 
   label {
@@ -64,6 +65,24 @@ main {
       outline: none;
       border: 2px solid var(--green-400);
     }
+  }
+
+  /* Remove spin buttons from input[type="number"] */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .icon {
+    position: absolute;
+    top: 2.65rem;
+    left: 1rem;
+    fill: var(--green-900);
   }
 }
 
@@ -131,5 +150,64 @@ main {
   &:hover {
     background-color: var(--grey-200);
     color: var(--green-900);
+  }
+}
+
+.disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.no-zero-error {
+  border: 2px solid rgb(211, 114, 78);
+}
+
+.error-message {
+  display: none;
+  color: rgb(211, 114, 78);
+  font-size: 1rem;
+  position: absolute;
+  right: 0.2rem;
+  top: 0;
+}
+
+.active {
+  background-color: var(--grey-200);
+  color: var(--green-900);
+}
+
+@media (min-width: 801px) {
+  main {
+    display: flex;
+    justify-content: space-between;
+    width: 920px;
+    height: 480px;
+    margin-top: 2.5rem;
+  }
+  .inputs {
+    width: 50%;
+    height: 100%;
+    padding: 1.3rem;
+  }
+
+  .results {
+    width: 45%;
+    padding: 2rem;
+
+    .result-group {
+      padding-top: 0.8rem;
+    }
+
+    .result-value {
+      font-size: 2.8rem;
+    }
+  }
+
+  .tip-buttons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .reset-button {
+    margin-top: 6rem;
   }
 }
