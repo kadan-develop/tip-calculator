@@ -58,7 +58,7 @@ peopleInput.addEventListener("change", (e) => {
   )}`;
 });
 
-resetButton.addEventListener("click", (e) => {
+resetButton.addEventListener("click", () => {
   //reset inputs
   billInput.value = 0;
   peopleInput.value = 1;
