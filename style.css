@@ -61,10 +61,6 @@ main {
     font-size: 1.5em;
     color: var(--green-900);
     text-align: right;
-    &:focus {
-      outline: none;
-      border: 2px solid var(--green-400);
-    }
   }
 
   /* Remove spin buttons from input[type="number"] */
@@ -84,6 +80,11 @@ main {
     left: 1rem;
     fill: var(--green-900);
   }
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid var(--green-400);
 }
 
 .tip-label {
@@ -158,10 +159,6 @@ main {
   pointer-events: none;
 }
 
-.no-zero-error {
-  border: 2px solid rgb(211, 114, 78);
-}
-
 .error-message {
   display: none;
   color: rgb(211, 114, 78);
@@ -174,6 +171,23 @@ main {
 .active {
   background-color: var(--grey-200);
   color: var(--green-900);
+}
+
+.attribution {
+  display: flex;
+  align-items: center;
+
+  margin-top: 5rem;
+  p {
+    font-size: 0.8rem;
+    color: var(--grey-500);
+    padding: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--grey-900);
+  }
 }
 
 @media (min-width: 801px) {
