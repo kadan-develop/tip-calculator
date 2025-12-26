@@ -21,7 +21,7 @@ billInput.addEventListener("change", () => {
 });
 
 tipButtons.forEach((button) => {
-  button.addEventListener("click", (e) => {
+  button.addEventListener("click", () => {
     tipPerc = e.target.innerText.replace("%", "");
     button.classList.add("active");
   });
